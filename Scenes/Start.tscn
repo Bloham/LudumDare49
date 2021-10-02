@@ -1,0 +1,56 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/GaugeScene.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fonts/Old Stamper Font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Tool_1.tscn" type="PackedScene" id=3]
+
+[node name="Start" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -214.624
+margin_top = 18.6126
+margin_right = 217.376
+margin_bottom = 69.6126
+custom_fonts/font = ExtResource( 2 )
+text = "Keep..it..Stable!"
+align = 1
+valign = 1
+
+[node name="Counter" type="Label" parent="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -225.938
+margin_top = 557.428
+margin_right = 206.062
+margin_bottom = 608.428
+custom_fonts/font = ExtResource( 2 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="Tool_1" parent="Control" instance=ExtResource( 3 )]
+margin_left = 536.164
+margin_top = 376.59
+margin_right = -521.836
+margin_bottom = -296.41
+
+[node name="GaugeCanvas" parent="." instance=ExtResource( 1 )]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -109.647
+margin_top = 90.4685
+margin_right = 117.353
+margin_bottom = 316.469
+
+[connection signal="button_down" from="Control/Tool_1/Button" to="GaugeCanvas" method="_on_Button_button_down"]
+
+[editable path="Control/Tool_1"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Tools/ToolScrollbar.gd" type="Script" id=1]
+
+[node name="ToolScrollbar" type="HScrollBar"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_right = 250.0
+margin_bottom = 50.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="scrolling" from="." to="." method="_on_Scrollbar_scrolling"]

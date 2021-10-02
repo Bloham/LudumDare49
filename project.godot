@@ -213,6 +213,11 @@ Globals="*res://addons/godot_helper_pack/core/globals.gd"
 SignalMgr="*res://addons/godot_helper_pack/core/signal_mgr.gd"
 ServiceMgr="*res://addons/godot_helper_pack/core/service_mgr.gd"
 
+[display]
+
+window/size/width=1366
+window/size/height=768
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/github-integration/plugin.cfg", "res://addons/godot_helper_pack/plugin.cfg" )

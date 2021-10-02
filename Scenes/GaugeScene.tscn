@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Graphics/undertest.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/progresstest.png" type="Texture" id=3]
+
+[node name="GaugeCanvas" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+anchor_right = 1.0
+margin_left = 1.88776
+margin_right = 1.8877
+margin_bottom = 40.0
+hint_tooltip = "If this bar is full terrible things will happen!"
+theme = ExtResource( 1 )
+value = 35.0
+rounded = true
+allow_greater = true
+allow_lesser = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 743.0
+margin_bottom = 743.0
+rect_scale = Vector2( 0.3, 0.3 )
+value = 33.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
