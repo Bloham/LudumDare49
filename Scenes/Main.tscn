@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Graphics/undertest.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Tools/ToolButton.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Tools/ToolScrollbar.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Graphics/S-IB_Networks_panel.jpg" type="Texture" id=8]
+[ext_resource path="res://Scenes/Tools/ToolSwitch.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Panel"]
 anchor_right = 1.0
@@ -21,7 +22,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 1" type="TextureRect" parent="."]
+[node name="Level1" type="TextureRect" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -36,47 +37,77 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolButton" parent="Level 1" instance=ExtResource( 6 )]
+[node name="ToolButton" parent="Level1" instance=ExtResource( 6 )]
 margin_left = -628.766
 margin_top = 444.411
 margin_right = -328.766
 margin_bottom = 544.411
 
-[node name="ToolButton2" parent="Level 1" instance=ExtResource( 6 )]
+[node name="ToolButton2" parent="Level1" instance=ExtResource( 6 )]
 margin_left = -637.568
 margin_top = 595.593
 margin_right = -337.568
 margin_bottom = 695.593
 
-[node name="ToolScrollbar" parent="Level 1" instance=ExtResource( 7 )]
+[node name="ToolScrollbar" parent="Level1" instance=ExtResource( 7 )]
 margin_left = -271.176
 margin_top = 649.703
 margin_right = 228.825
 margin_bottom = 699.703
 
-[node name="ToolScrollbar2" parent="Level 1" instance=ExtResource( 7 )]
+[node name="ToolScrollbar2" parent="Level1" instance=ExtResource( 7 )]
 margin_left = -275.341
 margin_top = 459.505
 margin_right = 224.659
 margin_bottom = 509.505
 
-[node name="ToolScrollbar3" parent="Level 1" instance=ExtResource( 7 )]
+[node name="ToolScrollbar3" parent="Level1" instance=ExtResource( 7 )]
 margin_left = -271.02
 margin_top = 555.648
 margin_right = 228.98
 margin_bottom = 605.648
 
-[node name="ToolButton3" parent="Level 1" instance=ExtResource( 6 )]
+[node name="ToolButton3" parent="Level1" instance=ExtResource( 6 )]
 margin_left = 307.399
 margin_top = 453.846
 margin_right = 607.399
 margin_bottom = 553.845
 
-[node name="ToolButton4" parent="Level 1" instance=ExtResource( 6 )]
-margin_left = 315.586
-margin_top = 624.621
-margin_right = 615.586
-margin_bottom = 724.621
+[node name="ToolButton4" parent="Level1" instance=ExtResource( 6 )]
+margin_left = 303.573
+margin_top = 599.259
+margin_right = 603.573
+margin_bottom = 699.259
+
+[node name="ToolSwitch" parent="Level1" instance=ExtResource( 9 )]
+margin_left = -493.66
+margin_top = 699.221
+margin_right = -403.659
+margin_bottom = 744.221
+
+[node name="ToolSwitch2" parent="Level1" instance=ExtResource( 9 )]
+margin_left = -318.795
+margin_top = 689.878
+margin_right = -228.795
+margin_bottom = 734.878
+
+[node name="ToolSwitch3" parent="Level1" instance=ExtResource( 9 )]
+margin_left = -150.606
+margin_top = 688.543
+margin_right = -60.6057
+margin_bottom = 733.543
+
+[node name="ToolSwitch4" parent="Level1" instance=ExtResource( 9 )]
+margin_left = 42.9461
+margin_top = 691.212
+margin_right = 132.946
+margin_bottom = 736.212
+
+[node name="ToolSwitch5" parent="Level1" instance=ExtResource( 9 )]
+margin_left = 252.516
+margin_top = 687.208
+margin_right = 342.516
+margin_bottom = 732.208
 
 [node name="WON" type="Label" parent="."]
 visible = false
@@ -136,10 +167,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="AddPressure" from="Level 1/ToolButton" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolButton2" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolScrollbar" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolScrollbar2" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolScrollbar3" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolButton3" to="." method="_AddPressure"]
-[connection signal="AddPressure" from="Level 1/ToolButton4" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolButton" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolButton2" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolScrollbar" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolScrollbar2" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolScrollbar3" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolButton3" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolButton4" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolSwitch" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolSwitch2" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolSwitch3" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolSwitch4" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level1/ToolSwitch5" to="." method="_AddPressure"]

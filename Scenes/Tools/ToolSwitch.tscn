@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ToolSwitch.gd" type="Script" id=1]
+
+[node name="ToolSwitch" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -45.0
+margin_right = 45.0
+margin_bottom = 45.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckButton" type="CheckButton" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -73.636
+margin_top = 8.01807
+margin_right = 2.36395
+margin_bottom = 48.0181
+rect_scale = Vector2( 2, 2 )
+disabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="toggled" from="CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

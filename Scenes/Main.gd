@@ -22,6 +22,7 @@ func UpdateUI():
 func EndGame():
 	$WON.visible = true
 	set_process(false)
+	$Level1.visible = false
 
 func _AddPressure(value):
 	pressure += value
