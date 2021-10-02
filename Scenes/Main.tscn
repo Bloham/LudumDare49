@@ -21,23 +21,82 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pressure_Valve" type="Label" parent="."]
-margin_left = 402.0
-margin_top = 236.0
-margin_right = 962.0
-margin_bottom = 474.0
+[node name="Level 1" type="TextureRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -13.0
+margin_top = -776.0
+margin_right = 16.0
+margin_bottom = 9.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToolButton" parent="Level 1" instance=ExtResource( 6 )]
+margin_left = -628.766
+margin_top = 444.411
+margin_right = -328.766
+margin_bottom = 544.411
+
+[node name="ToolButton2" parent="Level 1" instance=ExtResource( 6 )]
+margin_left = -637.568
+margin_top = 595.593
+margin_right = -337.568
+margin_bottom = 695.593
+
+[node name="ToolScrollbar" parent="Level 1" instance=ExtResource( 7 )]
+margin_left = -271.176
+margin_top = 649.703
+margin_right = 228.825
+margin_bottom = 699.703
+
+[node name="ToolScrollbar2" parent="Level 1" instance=ExtResource( 7 )]
+margin_left = -275.341
+margin_top = 459.505
+margin_right = 224.659
+margin_bottom = 509.505
+
+[node name="ToolScrollbar3" parent="Level 1" instance=ExtResource( 7 )]
+margin_left = -271.02
+margin_top = 555.648
+margin_right = 228.98
+margin_bottom = 605.648
+
+[node name="ToolButton3" parent="Level 1" instance=ExtResource( 6 )]
+margin_left = 307.399
+margin_top = 453.846
+margin_right = 607.399
+margin_bottom = 553.845
+
+[node name="ToolButton4" parent="Level 1" instance=ExtResource( 6 )]
+margin_left = 315.586
+margin_top = 624.621
+margin_right = 615.586
+margin_bottom = 724.621
+
+[node name="WON" type="Label" parent="."]
+visible = false
+margin_left = -122.119
+margin_top = -19.092
+margin_right = 437.881
+margin_bottom = 218.908
+rect_scale = Vector2( 3, 3 )
 custom_fonts/font = ExtResource( 3 )
-text = "Pressure"
+text = "You lost!"
 align = 1
 valign = 1
 
 [node name="Tutorial" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -563.1
-margin_top = 46.0
-margin_right = -3.09998
-margin_bottom = 284.0
+margin_left = -564.988
+margin_top = 38.449
+margin_right = -4.98767
+margin_bottom = 276.449
 custom_fonts/font = ExtResource( 3 )
 text = "Keep the pressure within the gauge!"
 align = 1
@@ -64,68 +123,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Level 1" type="TextureRect" parent="."]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -371.0
-texture = ExtResource( 8 )
-expand = true
-stretch_mode = 1
+[node name="Pressure_Valve" type="Label" parent="."]
+margin_left = 394.449
+margin_top = 292.674
+margin_right = 954.449
+margin_bottom = 430.674
+custom_fonts/font = ExtResource( 3 )
+text = "Pressure"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ToolButton" parent="Level 1" instance=ExtResource( 6 )]
-margin_left = -640.092
-margin_top = 55.535
-margin_right = -340.092
-margin_bottom = 155.535
-
-[node name="ToolButton2" parent="Level 1" instance=ExtResource( 6 )]
-margin_left = -633.793
-margin_top = 199.166
-margin_right = -333.793
-margin_bottom = 299.166
-
-[node name="ToolScrollbar" parent="Level 1" instance=ExtResource( 7 )]
-margin_left = -285.261
-margin_top = 61.8347
-margin_right = 214.739
-margin_bottom = 111.835
-
-[node name="ToolScrollbar2" parent="Level 1" instance=ExtResource( 7 )]
-margin_left = -285.261
-margin_top = 155.069
-margin_right = 214.739
-margin_bottom = 205.069
-
-[node name="ToolScrollbar3" parent="Level 1" instance=ExtResource( 7 )]
-margin_left = -280.221
-margin_top = 250.823
-margin_right = 219.779
-margin_bottom = 300.823
-
-[node name="ToolButton3" parent="Level 1" instance=ExtResource( 6 )]
-margin_left = 278.39
-margin_top = 51.7553
-margin_right = 578.39
-margin_bottom = 151.755
-
-[node name="ToolButton4" parent="Level 1" instance=ExtResource( 6 )]
-margin_left = 284.69
-margin_top = 191.607
-margin_right = 584.69
-margin_bottom = 291.607
-
-[node name="WON" type="Label" parent="."]
-visible = false
-margin_left = -122.119
-margin_top = -19.092
-margin_right = 437.881
-margin_bottom = 218.908
-rect_scale = Vector2( 3, 3 )
-custom_fonts/font = ExtResource( 3 )
-text = "You lost!"
-align = 1
-valign = 1
+[connection signal="AddPressure" from="Level 1/ToolButton" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolButton2" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolScrollbar" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolScrollbar2" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolScrollbar3" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolButton3" to="." method="_AddPressure"]
+[connection signal="AddPressure" from="Level 1/ToolButton4" to="." method="_AddPressure"]

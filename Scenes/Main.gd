@@ -1,6 +1,5 @@
 extends Panel
 
-signal addPressure
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -22,9 +21,7 @@ func UpdateUI():
 
 func EndGame():
 	$WON.visible = true
+	set_process(false)
 
-func _on_ToolButton_AddPressure(value):
-	pressure = pressure + value
-
-func _on_ToolScrollbar_AddPressure(value):
-	pressure = pressure + value
+func _AddPressure(value):
+	pressure += value
