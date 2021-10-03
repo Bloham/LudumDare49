@@ -1,14 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Graphics/Background.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Main.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/BlackOpsOne Font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Graphics/PressureGauge.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Button One Pressed.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/Test Pressure.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Label.gd" type="Script" id=7]
 [ext_resource path="res://Graphics/PressureGaugeFULL.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/Tools/ToolSwitch.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Tools/ToolRoundButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Graphics/Button One.png" type="Texture" id=11]
 
 [node name="Main" type="Panel"]
 anchor_right = 1.0
@@ -225,17 +227,61 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WON" type="Label" parent="."]
+[node name="WinTimer" type="Timer" parent="."]
+wait_time = 20.0
+
+[node name="Menue" type="Panel" parent="."]
 visible = false
-margin_left = -122.119
-margin_top = -19.092
-margin_right = 437.881
-margin_bottom = 218.908
-rect_scale = Vector2( 3, 3 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -420.0
+margin_top = -232.0
+margin_right = 420.0
+margin_bottom = 232.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lost" type="Label" parent="Menue"]
+visible = false
+margin_left = 127.502
+margin_top = 73.4983
+margin_right = 687.502
+margin_bottom = 157.498
 custom_fonts/font = ExtResource( 3 )
-text = "You lost!"
+text = "Sorry, you lost! 
+The pressure got too high, use the switches and buttons to lower the pressure."
 align = 1
 valign = 1
+autowrap = true
+
+[node name="Won" type="Label" parent="Menue"]
+visible = false
+margin_left = 119.502
+margin_top = 65.4983
+margin_right = 695.502
+margin_bottom = 207.498
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.545098, 1, 0, 1 )
+text = "You Won!
+Thank you for playing my micro LudumDare49 - Unstable compo game. Now move on and play some of the other games!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TextureButton" type="TextureButton" parent="Menue"]
+margin_left = 303.502
+margin_top = 217.498
+margin_right = 487.502
+margin_bottom = 403.498
+texture_normal = ExtResource( 11 )
+texture_pressed = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="AddPressure" from="Level1/ToolSwitch" to="." method="_AddPressure"]
 [connection signal="AddPressure" from="Level1/ToolSwitch2" to="." method="_AddPressure"]
@@ -263,3 +309,5 @@ valign = 1
 [connection signal="AddPressure" from="Level1/ToolRoundButton4" to="." method="_AddPressure"]
 [connection signal="AddPressure" from="Level1/ToolRoundButton5" to="." method="_AddPressure"]
 [connection signal="AddPressure" from="Level1/ToolRoundButton6" to="." method="_AddPressure"]
+[connection signal="timeout" from="WinTimer" to="." method="_on_WinTimer_timeout"]
+[connection signal="pressed" from="Menue/TextureButton" to="." method="_restartGame"]
