@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Graphics/slider button space.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/slider bottom.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Tools/ToolSliderNew.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[sub_resource type="StyleBoxTexture" id=2]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 500, 113 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 500, 113 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[node name="ToolSliderNew" type="Control"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -32.0
+margin_right = 32.0
+margin_bottom = 24.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HScrollBar" type="HScrollBar" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -250.0
+margin_right = 250.0
+margin_bottom = 113.0
+custom_styles/grabber_highlight = SubResource( 1 )
+custom_styles/grabber = SubResource( 2 )
+custom_styles/scroll_focus = SubResource( 3 )
+custom_styles/scroll = SubResource( 4 )
+custom_styles/grabber_pressed = SubResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HSlider" type="HSlider" parent="."]
+margin_right = 16.0
+margin_bottom = 16.0
+
+[connection signal="scrolling" from="HScrollBar" to="." method="_on_HScrollBar_scrolling"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

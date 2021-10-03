@@ -3,21 +3,21 @@ extends Panel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var pressure = 99
+var pressure = 1
 
 # Called when the node enters the scene tree for the first time.
 
 
 func _process(delta):
-	pressure = pressure -0.1
+	pressure = pressure +0.1
 	UpdateUI()
-	if pressure >= 100 or pressure <= 0:
+	if pressure >= 100:
 		EndGame()
+	if pressure <= 0:
+		pressure = 0
 
 func UpdateUI():
-	$TextureProgress.value = pressure
-	$Pressure_Valve.text = str(pressure)
-	pass
+	$Level1/PressureGauge.value = pressure
 
 func EndGame():
 	$WON.visible = true

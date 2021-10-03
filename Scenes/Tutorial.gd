@@ -12,7 +12,7 @@ func _ready():
 
 func _process(delta):
 	if percent_visible <= 100:
-		percent_visible = percent_visible + 0.001
+		percent_visible = percent_visible + 0.005
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -1,13 +1,56 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Tools/ToolScrollbar.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/slider button space.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/slider bottom.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+[sub_resource type="Theme" id=4]
+HScrollBar/icons/decrement = null
+HScrollBar/icons/decrement_highlight = null
+HScrollBar/icons/increment = null
+HScrollBar/icons/increment_highlight = null
+HScrollBar/styles/grabber = SubResource( 5 )
+HScrollBar/styles/grabber_highlight = null
+HScrollBar/styles/grabber_pressed = null
+HScrollBar/styles/scroll = null
+HScrollBar/styles/scroll_focus = null
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[sub_resource type="StyleBoxTexture" id=10]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[sub_resource type="StyleBoxTexture" id=11]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 91, 113 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 500, 113 )
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 91, 113 )
 
 [node name="ToolScrollbar" type="HScrollBar"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -250.0
-margin_right = 250.0
-margin_bottom = 50.0
+margin_left = -249.0
+margin_right = 252.0
+margin_bottom = 46.0
+theme = SubResource( 4 )
+custom_styles/grabber_highlight = SubResource( 9 )
+custom_styles/grabber = SubResource( 10 )
+custom_styles/scroll_focus = SubResource( 11 )
+custom_styles/scroll = SubResource( 8 )
+custom_styles/grabber_pressed = SubResource( 12 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false

@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://ToolSwitch.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/SwitchOffEn.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/SwitchOnEn.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/SwitchOffDis.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/SwitchOnDis.png" type="Texture" id=5]
 
 [node name="ToolSwitch" type="Control"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -45.0
-margin_right = 45.0
+margin_left = -14.5
+margin_right = 14.5
 margin_bottom = 45.0
 script = ExtResource( 1 )
 __meta__ = {
@@ -16,19 +20,19 @@ __meta__ = {
 [node name="CheckButton" type="CheckButton" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -73.636
-margin_top = 8.01807
-margin_right = 2.36395
-margin_bottom = 48.0181
-rect_scale = Vector2( 2, 2 )
-disabled = true
+margin_left = -31.0
+margin_right = 31.0
+margin_bottom = 111.0
+custom_icons/off = ExtResource( 2 )
+custom_icons/on_disabled = ExtResource( 5 )
+custom_icons/on = ExtResource( 3 )
+custom_icons/off_disabled = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
-autostart = true
 
 [connection signal="toggled" from="CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
