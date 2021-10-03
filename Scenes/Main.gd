@@ -4,7 +4,7 @@ extends Panel
 # var a = 2
 # var b = "text"
 var pressure = 1
-var gameIsOver
+var gameIsOver = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

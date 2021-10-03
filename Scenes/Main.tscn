@@ -227,8 +227,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="Level1"]
+margin_left = 1159.77
+margin_top = 387.013
+margin_right = 1256.77
+margin_bottom = 413.013
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.435294, 0.556863, 0.541176, 1 )
+text = "@Bloham"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Level1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 110.774
+margin_top = -7.48682
+margin_right = 321.774
+margin_bottom = 18.5132
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.435294, 0.556863, 0.541176, 1 )
+text = "@bensworld.games"
+
 [node name="WinTimer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 120.0
 
 [node name="Menue" type="Panel" parent="."]
 visible = false
